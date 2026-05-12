@@ -4,7 +4,7 @@
   --second-color:#6a59d1;
   --third-color:#777;
   
-  --hover-color:#614fd0;
+  --hover-color:#080323;
 
   --body-bg-color:#fefefe;
   --card-bg-color:#fff;
@@ -242,7 +242,8 @@ header.sticky .nav-bar{
 }
 .home{
     position: relative;
-    min-width: 1250px;
+    width: 100%;
+    max-width: 1250px;
     min-height: 100vh;
     margin-left: auto;
     margin-right: auto;
@@ -258,8 +259,9 @@ header.sticky .nav-bar{
     gap: 10px;
 }
 .home-img {
-    width: 500px; /* Adjust width as needed */
-    height: 500px; /* Adjust height as needed */
+    width: 100%;
+    max-width: 550px;
+    height: 500px;
     overflow: hidden; /* Ensures image doesn’t overflow */
     border-radius: 45%; /* Optional: makes it circular */
     margin-right: 30px;
@@ -287,7 +289,7 @@ header.sticky .nav-bar{
     color: var(--hover-color);
 }
 .home-container .info h2{
-    font-size: 4em;
+    font-size: 4.2em;
     font-weight: 600;
     line-height: 70px;
 }
@@ -350,23 +352,27 @@ header.sticky .nav-bar{
 }
 .section{
     position: relative;
-    width: 1150px;
+    width: 100%;
+    max-width: 1150px;
     margin-left: auto;
     margin-right: auto;
     padding: 6rem 2rem 2rem;
 }
 .sub-section{
     position: relative;
-    width: 1150px;
+    width: 100%;
+    max-width: 1150px;
     margin-left: auto;
     margin-right: auto;
     padding: 6rem 0;
 }
 .about-img {
-    width: 1000px; /* Adjust width as needed */
-    height: 500px; /* Adjust height as needed */
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
     overflow: hidden; /* Ensures image doesn’t overflow */
-    border-radius: 5px; /* Optional: makes it circular */
+    border-radius: 5px;
+    flex-shrink: 0;
     margin-right: 30px;
 }
 .about-img img{
@@ -1025,4 +1031,264 @@ footer a{
     font-size: var(--medium-font-size);
     font-weight: 300;
     margin-top: 50px;
+}
+/* ============================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================ */
+
+/* --- Hamburger Menu Button (hidden on desktop) --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 999999;
+}
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--first-color);
+    border-radius: 3px;
+    transition: .3s ease;
+}
+.hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* --- Global image fix --- */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---- TABLET: 1024px ---- */
+@media (max-width: 1024px) {
+    .home-container .media-icons {
+        margin-left: 20px;
+    }
+    .home-container .info h2 {
+        font-size: 2.8em;
+        line-height: 55px;
+    }
+    .home-img {
+        max-width: 380px;
+        height: 380px;
+    }
+    .about .container .content {
+        flex-wrap: wrap;
+    }
+    .about-img {
+        max-width: 100%;
+        height: 350px;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .contact .container .content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .contact-left, .contact-right {
+        width: 100%;
+    }
+}
+
+/* ---- TABLET/MOBILE: 768px ---- */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .hamburger {
+        display: flex;
+    }
+    .nav-items {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--card-bg-color);
+        backdrop-filter: blur(20px);
+        box-shadow: var(--box-shadow);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: .4s ease;
+        z-index: 99998;
+    }
+    .nav-items.open {
+        right: 0;
+    }
+    .nav-items a:not(:last-child) {
+        margin-right: 0;
+    }
+    .nav-items a {
+        font-size: 1.2em;
+    }
+
+    /* Home section */
+    .home-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+    .home-container .media-icons {
+        flex-direction: row;
+        margin-left: 0;
+        margin-top: 10px;
+        gap: 15px;
+    }
+    .home-container .info h2 {
+        font-size: 2.2em;
+        line-height: 45px;
+    }
+    .home-container .info h3 {
+        line-height: 35px;
+    }
+    .home-img {
+        width: 280px;
+        height: 280px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Section titles */
+    .section-title-01 {
+        font-size: 3em;
+    }
+    .section-title-02 {
+        font-size: 1.8em;
+    }
+
+    /* About */
+    .about-info .professional-list {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .about-info .description h3 {
+        font-size: 1.5em;
+    }
+
+    /* Contact card */
+    .get-in-touch .contact-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 30px;
+    }
+    .contact-card .title h2 {
+        font-size: 2.8em;
+    }
+    .contact-card .title h3 {
+        font-size: 1.6em;
+    }
+
+    /* Contact form */
+    .contact-form .second-row {
+        flex-direction: column;
+    }
+    .contact-form .second-row input {
+        width: 100%;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-container .hr {
+        display: none;
+    }
+    .footer-container .info ul,
+    .footer-container .follow ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Sub-section padding */
+    .sub-section {
+        padding: 4rem 1.5rem;
+    }
+    .section {
+        padding: 5rem 1.5rem 2rem;
+    }
+}
+
+/* ---- MOBILE: 480px ---- */
+@media (max-width: 480px) {
+    body {
+        margin: 1rem 0 0 0;
+    }
+    .home-container .info h2 {
+        font-size: 1.7em;
+        line-height: 38px;
+    }
+    .home-img {
+        width: 220px;
+        height: 220px;
+    }
+    .section-title-01 {
+        font-size: 2.2em;
+    }
+    .section-title-02 {
+        font-size: 1.5em;
+        transform: translateY(-55px);
+    }
+    .btn {
+        padding: 14px 22px;
+        font-size: 0.9em;
+    }
+    .service-card {
+        padding: 30px;
+    }
+    .contact-card .title h2 {
+        font-size: 2em;
+    }
+    .contact-card .title h3 {
+        font-size: 1.3em;
+    }
+    .get-in-touch .contact-card {
+        padding: 25px 20px;
+    }
+    .experience-card {
+        padding: 20px;
+    }
+    .theme-btn {
+        top: 70px;
+    }
+
+    /* Hide custom cursor on touch devices */
+    #cursor {
+        display: none;
+    }
+}
+
+/* ---- VERY SMALL: 360px ---- */
+@media (max-width: 360px) {
+    .home-container .info h2 {
+        font-size: 1.4em;
+    }
+    .home-img {
+        width: 180px;
+        height: 180px;
+    }
+    .nav-items {
+        width: 85%;
+    }
+}
+
+/* Nav overlay — darkens background and catches clicks-outside to close menu */
+#nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 99997;
+    backdrop-filter: blur(2px);
+}
+#nav-overlay.active {
+    display: block;
 }

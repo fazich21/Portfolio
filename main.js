@@ -135,7 +135,51 @@ portfolioCloseBtns.forEach((portfolioCloseBtn)=>{
    });
   });
 });
+/******************************************** */
+const themeBtn = document.querySelector(".theme-btn");
 
+// Helper functions to get current state
+const getCurrentTheme = () => document.body.classList.contains("dark-theme") ? "dark" : "light";
+const getCurrentIcon = () => themeBtn.classList.contains("sun") ? "sun" : "moon";
+
+// Manual Toggle Logic
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+    themeBtn.classList.toggle("sun");
+
+    localStorage.setItem("saved-theme", getCurrentTheme());
+    localStorage.setItem("saved-icon", getCurrentIcon());
+});
+
+// Automatic Time Logic
+const autoCheckTime = () => {
+    const hour = new Date().getHours();
+    // If it's 6 PM or later, or before 6 AM, it's Night (Dark)
+    const isNight = hour >= 18 || hour < 6;
+
+    if (isNight) {
+        document.body.classList.add("dark-theme");
+        themeBtn.classList.add("sun"); // Assuming 'sun' icon is shown when in dark mode to switch back
+    } else {
+        document.body.classList.remove("dark-theme");
+        themeBtn.classList.remove("sun");
+    }
+};
+
+// Initialization Logic
+const savedTheme = localStorage.getItem("saved-theme");
+const savedIcon = localStorage.getItem("saved-icon");
+
+if (savedTheme) {
+    // If the user previously picked a theme, honor their choice
+    document.body.classList[savedTheme === "dark" ? "add" : "remove"]("dark-theme");
+    themeBtn.classList[savedIcon === "sun" ? "add" : "remove"]("sun");
+} else {
+    // If it's their first time, set it based on the clock
+    autoCheckTime();
+}
+//************************************ */
+/*
 const themeBtn = document.querySelector(".theme-btn");
 themeBtn.addEventListener("click",()=>{
    document.body.classList.toggle("dark-theme");
@@ -153,7 +197,7 @@ if(savedTheme){
    document.body.classList[savedTheme === "dark" ? "add" : "remove"]("dark-theme");
    themeBtn.classList[savedIcon ==="sun" ? "add":"remove"] ("sun");
 }
-
+*/
 const scrollTopBtn=document.querySelector(".scrollToTop-btn");
 window,addEventListener("scroll",function(){
    scrollTopBtn.classList.toggle("active",window.scrollY >500);
@@ -179,3 +223,43 @@ window.addEventListener("scroll",()=>{
        }
    });
 });
+// Hamburger menu toggle
+const hamburger = document.getElementById("hamburger");
+const navItems = document.querySelector(".nav-items");
+
+// Create dark overlay for click-outside-to-close
+const navOverlay = document.createElement("div");
+navOverlay.id = "nav-overlay";
+document.body.appendChild(navOverlay);
+
+function closeNav() {
+    hamburger.classList.remove("active");
+    navItems.classList.remove("open");
+    navOverlay.classList.remove("active");
+}
+
+function openNav() {
+    hamburger.classList.add("active");
+    navItems.classList.add("open");
+    navOverlay.classList.add("active");
+}
+
+if (hamburger && navItems) {
+    // Toggle on hamburger click
+    hamburger.addEventListener("click", () => {
+        navItems.classList.contains("open") ? closeNav() : openNav();
+    });
+
+    // Close when any nav link is clicked
+    navItems.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeNav);
+    });
+
+    // Close when clicking the overlay (outside the menu)
+    navOverlay.addEventListener("click", closeNav);
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeNav();
+    });
+}
