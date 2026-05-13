@@ -6,6 +6,8 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
@@ -59,13 +61,14 @@
                 <a href="#Twitter"><i class="fab fa-twitter"></i></a>
             </div>
              <div class="info">
+                <div class="role-badge"><span class="badge-icon">&lt;/&gt;</span> Generative AI Enthusiast &amp; Software Developer</div>
                 <h2>Hi, I am fazi</h2>
           <!---->    <h3>A <span class="auto-type"></span></h3>
-                <p>Passionate about creating user-friendly websites with top-notch web design and development skills</p>
+                <p>Passionate about designing and developing responsive, user-friendly websites and AI-powered applications with modern technologies, clean code, and a strong focus on delivering exceptional user experiences.</p>
                 <a href="#contact" class="btn">Contact me <i class="fas fa-arrow-circle-right"></i></a>
             </div>
             <div class="home-img">
-                <img src="images/DSC_6338.JPG" alt="profilepic">
+                <img src="images/faizan graduation.png" alt="profilepic">
             </div>
         </div>
         <a href="#about" class="scroll-down">Scroll Down <i class="fas fa-arrow-down"></i></a>
@@ -137,35 +140,35 @@
                         <ul class="bars">
                             <li class="bar">
                                 <div class="info">
-                                    <span>MERN Stack</span>
+                                    <span><i class="devicon-react-original colored"></i>  MERN Stack</span>
                                     <span>90%</span>
                                 </div>
                                 <div class="line html"></div>
                             </li>
                             <li class="bar">
                                 <div class="info">
-                                    <span>Flutter Development</span>
+                                    <span><i class="devicon-flutter-plain colored"></i> Flutter Development</span>
                                     <span>85%</span>
                                 </div>
                                 <div class="line css"></div>
                             </li>
                             <li class="bar">
                                 <div class="info">
-                                    <span>Data Science</span>
+                                    <span><i class="devicon-python-plain colored"></i> Data Science</span>
                                     <span>80%</span>
                                 </div>
                                 <div class="line javascript"></div>
                             </li>
                             <li class="bar">
                                 <div class="info">
-                                    <span>Artificial Intelligence</span>
+                                    <span><i class="fa-solid fa-brain" style="background: linear-gradient(45deg, #f093fb, #f5576c, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;"></i> Artificial Intelligence</span>
                                     <span>85%</span>
                                 </div>
                                 <div class="line jquery"></div>
                             </li>
                             <li class="bar">
                                 <div class="info">
-                                    <span>Digital Marketing</span>
+                                    <span><i class="fa-solid fa-bullhorn" style="color: #5999f3;"></i> Digital Marketing</span>
                                     <span>65%</span>
                                 </div>
                                 <div class="line php"></div>
@@ -333,72 +336,181 @@
             <h1 class="section-title-01">Portfolio</h1>
             <h2 class="section-title-02">Portfolio</h2>
             <div class="content">
-                <div class="portfolio-list">
-                    <div class="img-card">
-                        <div class="overlay"></div>
-                        <div class="info">
-                            <h3>Web Development</h3>
-                            <span>MERN</span>
-                        </div>
-                        <img src="images/web.jpg" width="500px" height="500px" alt="web">
-                    </div>    
-            
-                    <div class="img-card">
-                        <div class="overlay"></div>
-                        <div class="info">
-                            <h3>App Development</h3>
-                            <span>Flutter</span>
-                        </div>
-                        <img src="images/app.jpg" width="500px" height="500px" alt="web">
-                    </div> 
-            
-                    <div class="img-card">
-                        <div class="overlay"></div>
-                        <div class="info">
-                            <h3>Data Science</h3>
-                            <span>Kaggle</span>
-                        </div>
-                        <img src="images/ds.jpg" width="500px" height="500px" alt="web">
-                    </div>    
-            
-                    <div class="img-card">
-                        <div class="overlay"></div>
-                        <div class="info">
-                            <h3>Software Development</h3>
-                            <span>Native</span>
-                        </div>
-                        <img src="images/sf.jpg" width="500px" height="500px" alt="web">
-                    </div>    
-            
-                    <div class="img-card">
-                        <div class="overlay"></div>
-                        <div class="info">
-                            <h3>Editing</h3>
-                            <span>Photoshop</span>
-                        </div>
-                        <img src="images/video.jpg" width="500px" height="500px" alt="web">
-                    </div>    
-            
-                    <div class="img-card">
-                        <div class="overlay"></div>
-                        <div class="info">
-                            <h3>Digital Marketing</h3>
-                            <span>Google</span>
-                        </div>
-                        <img src="images/dg.jpg" width="500px" height="500px" alt="web">
-                    </div>    
-                </div>
-            </div>
 
-           <!--  </div class="portfolio-model flex-center">
-                    <div class="portfolio-model-body">
-                        <i class="fas fa-times portfolio-close-btn"></i>
-                        <h3>Web Design</h3>
-                        <img src="images/web.jpg"  alt="web">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore cumque, dolores voluptatibus commodi eos, incidunt nulla aperiam obcaecati vitae quas accusamus. Quaerat eum, delectus recusandae ex cumque rerum. Voluptate, temporibus.</p>
+                <!-- Filter Tabs -->
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="app">Mobile</button>
+                    <button class="filter-btn" data-filter="ai">AI / Python</button>
+                </div>
+
+                <div class="portfolio-grid">
+
+                    <!-- 1. AI Driven Auction App -->
+                    <div class="project-card" data-category="app ai">
+                        <div class="project-card-inner">
+                            <div class="project-visual auction-visual">
+                                <img src="images/Auction.png" alt="AI Driven Auction App">
+                            </div>
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="project-tag">Flutter</span>
+                                    <span class="project-tag">Firebase</span>
+                                    <span class="project-tag">ML</span>
+                                </div>
+                                <h3 class="project-title">AI Driven Auction App</h3>
+                                <p class="project-desc">Real-time bidding platform powered by machine learning for smart price prediction, fraud detection, and personalized item recommendations.</p>
+                                <div class="project-features">
+                                    <span><i class="fas fa-check"></i> Real-time bidding engine</span>
+                                    <span><i class="fas fa-check"></i> AI price prediction</span>
+                                    <span><i class="fas fa-check"></i> Fraud detection model</span>
+                                </div>
+                                <div class="project-footer">
+                                    <a href="#" class="project-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                                    <a href="https://github.com/fazich21" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div> 
-            </div>-->
+
+                    <!-- 2. Digital Marketing Website -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-card-inner">
+                            <div class="project-visual marketing-visual">
+                               <img src="images/digital.png" alt="AI Driven Auction App">>
+                            </div>
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="project-tag">HTML/CSS</span>
+                                    <span class="project-tag">JavaScript</span>
+                                    <span class="project-tag">SEO</span>
+                                </div>
+                                <h3 class="project-title">Digital Marketing Website</h3>
+                                <p class="project-desc">A high-converting marketing agency website with animated landing sections, SEO optimization, and integrated analytics dashboard.</p>
+                                <div class="project-features">
+                                    <span><i class="fas fa-check"></i> Landing page animations</span>
+                                    <span><i class="fas fa-check"></i> SEO optimized structure</span>
+                                    <span><i class="fas fa-check"></i> Analytics integration</span>
+                                </div>
+                                <div class="project-footer">
+                                    <a href="#" class="project-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                                    <a href="https://github.com/fazich21" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Expense Tracker App -->
+                    <div class="project-card" data-category="ai app">
+                        <div class="project-card-inner">
+                            <div class="project-visual expense-visual">
+                              <img src="images/expense.png" alt="AI Driven Auction App">
+                            </div>
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="project-tag">Flutter</span>
+                                    <span class="project-tag">Supabase</span>
+                                    <span class="project-tag">AI Chatbot</span>
+                                </div>
+                                <h3 class="project-title">Expense Tracker App</h3>
+                                <p class="project-desc">Full-stack personal finance manager with budget categorization, visual spending reports, recurring transactions and export to CSV.</p>
+                                <div class="project-features">
+                                    <span><i class="fas fa-check"></i> Budget categories</span>
+                                    <span><i class="fas fa-check"></i> Interactive charts</span>
+                                    <span><i class="fas fa-check"></i> Monthly reports</span>
+                                </div>
+                                <div class="project-footer">
+                                    <a href="#" class="project-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                                    <a href="https://github.com/fazich21" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Chat Application -->
+                    <div class="project-card" data-category="web app">
+                        <div class="project-card-inner">
+                            <div class="project-visual chat-visual">
+                               <img src="images/chat.png" alt="AI Driven Auction App">
+                            </div>
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="project-tag">Socket.io</span>
+                                    <span class="project-tag">Firebase</span>
+                                    <span class="project-tag">Flutter</span>
+                                </div>
+                                <h3 class="project-title">Chat Application</h3>
+                                <p class="project-desc">Real-time messaging app with private and group chat, media sharing, read receipts, emoji reactions and online presence indicators.</p>
+                                <div class="project-features">
+                                    <span><i class="fas fa-check"></i> Real-time messaging</span>
+                                    <span><i class="fas fa-check"></i> Group & private rooms</span>
+                                    <span><i class="fas fa-check"></i> Media file sharing</span>
+                                </div>
+                                <div class="project-footer">
+                                    <a href="#" class="project-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                                    <a href="https://github.com/fazich21" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Jarvis Python Project -->
+                    <div class="project-card" data-category="ai">
+                        <div class="project-card-inner">
+                            <div class="project-visual jarvis-visual">
+                              <img src="images/jarvis_ai.png" alt="AI Driven Auction App">
+                            </div>
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="project-tag">Python</span>
+                                    <span class="project-tag">NLP</span>
+                                    <span class="project-tag">Speech API</span>
+                                </div>
+                                <h3 class="project-title">Jarvis — Python AI Assistant</h3>
+                                <p class="project-desc">Voice-activated desktop AI assistant that handles web search, system commands, weather updates, email automation, and smart task scheduling.</p>
+                                <div class="project-features">
+                                    <span><i class="fas fa-check"></i> Voice recognition</span>
+                                    <span><i class="fas fa-check"></i> System automation</span>
+                                    <span><i class="fas fa-check"></i> NLP command parsing</span>
+                                </div>
+                                <div class="project-footer">
+                                    <a href="#" class="project-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                                    <a href="https://github.com/fazich21" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Ride Sharing App -->
+                    <div class="project-card" data-category="app">
+                        <div class="project-card-inner">
+                            <div class="project-visual ride-visual">
+                            <img src="images/ride.png" alt="AI Driven Auction App">
+                            </div>
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="project-tag">Flutter</span>
+                                    <span class="project-tag">Firebase</span>
+                                    <span class="project-tag">Maps API</span>
+                                </div>
+                                <h3 class="project-title">Ride Sharing App</h3>
+                                <p class="project-desc">Cross-platform mobile ride-hailing app with live driver tracking, fare estimation, ride history, in-app payments and driver rating system.</p>
+                                <div class="project-features">
+                                    <span><i class="fas fa-check"></i> Live GPS tracking</span>
+                                    <span><i class="fas fa-check"></i> In-app payments</span>
+                                    <span><i class="fas fa-check"></i> Driver & rider panels</span>
+                                </div>
+                                <div class="project-footer">
+                                    <a href="#" class="project-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                                    <a href="https://github.com/fazich21" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- end portfolio-grid -->
+            </div>
         </div>
         <div class="get-in-touch sub-section">
             <div class="container">
@@ -435,7 +547,7 @@
                         </li>
                         <li>
                             <h3 class="item-title"><i class="fas fa-map-marker-alt"></i>Offical Address</h3>
-                            <span>ArbiSoft DHA-Phase 6 Islamabad</span>
+                            <span>Islamabad</span>
                         </li>
                     </ul>
                 </div>

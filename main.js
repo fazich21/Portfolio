@@ -263,3 +263,24 @@ if (hamburger && navItems) {
         if (e.key === "Escape") closeNav();
     });
 }
+
+// ===== Portfolio Filter =====
+const filterBtns = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        filterBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filter = btn.getAttribute("data-filter");
+        projectCards.forEach(card => {
+            const cats = card.getAttribute("data-category") || "";
+            if (filter === "all" || cats.includes(filter)) {
+                card.style.display = "block";
+                card.style.animation = "fadeInUp 0.4s ease forwards";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+});
